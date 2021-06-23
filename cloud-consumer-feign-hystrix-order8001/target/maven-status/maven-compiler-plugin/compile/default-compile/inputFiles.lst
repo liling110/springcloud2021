@@ -1,0 +1,4 @@
+D:\liling\springcloud2021\cloud-consumer-feign-hystrix-order8001\src\main\java\com\springcloud\OrderFeignHystrixMain8001.java
+D:\liling\springcloud2021\cloud-consumer-feign-hystrix-order8001\src\main\java\com\springcloud\service\OrderHystrixService.java
+D:\liling\springcloud2021\cloud-consumer-feign-hystrix-order8001\src\main\java\com\springcloud\service\impl\OrderHystrixFallBackServiceImpl.java
+D:\liling\springcloud2021\cloud-consumer-feign-hystrix-order8001\src\main\java\com\springcloud\controller\OrderHystrixController.java

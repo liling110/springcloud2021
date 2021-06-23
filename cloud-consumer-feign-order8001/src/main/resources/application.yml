@@ -1,0 +1,19 @@
+server:
+  port: 8001
+
+eureka:
+  client:
+    register-with-eureka: false   #是否将自己注册到注册中心,集群必须设置为true配合ribbon
+    service-url:
+      #      defaultZone: http://localhost:7001/eureka # 注册一个eureka
+      defaultZone: http://localhost:7001/eureka,http://127.0.0.1:7002/eureka # 注册多个eureka
+
+#设置feign客户端超时时间
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
+# 后台打印日志
+logging:
+  level:
+    com.springcloud.service.PaymentFeignService: debug

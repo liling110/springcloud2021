@@ -1,0 +1,31 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true  #开启注册中心路由功能
+      #          lower-case-service-id: true
+      routes:
+        - id: payment_routh # 路由ID，没有固定规则但要求唯一
+#          uri: http://localhost:8002
+          uri: lb://cloud-payment-service #此处如果有问题，请注意依赖spring-cloud-starter-netflix-eureka-client依赖不能错
+          predicates:
+            - Path=/payment/getPaymentById/**
+        - id: payment_routh2
+#          uri: http://localhost:8002
+          uri: lb://cloud-payment-service
+          predicates:
+            - Path=/payment/lb/**
+eureka:
+  instance:
+    hostname: localhost   #eureka服务端的实例名称 单机
+  #    hostname: eureka7001.com   #eureka服务端的实例名称 集群
+  client:
+    register-with-eureka: true   #false表示不向注册中心注册自己
+    fetch-registry: true   #false表示自己端就是注册中心
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:7001/eureka/   #单机

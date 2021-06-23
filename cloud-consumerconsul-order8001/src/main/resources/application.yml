@@ -1,0 +1,13 @@
+server:
+  port: 8001
+
+# 服务别名---注册中心名称
+spring:
+  application:
+    name: consul-consumer-order
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
