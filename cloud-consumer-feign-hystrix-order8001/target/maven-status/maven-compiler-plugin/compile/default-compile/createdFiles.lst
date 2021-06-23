@@ -1,4 +1,0 @@
-com\springcloud\service\impl\OrderHystrixFallBackServiceImpl.class
-com\springcloud\service\OrderHystrixService.class
-com\springcloud\controller\OrderHystrixController.class
-com\springcloud\OrderFeignHystrixMain8001.class

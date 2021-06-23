@@ -1,6 +1,0 @@
-com\springcloud\config\ApplicationContextConfig.class
-com\springcloud\lb\LoadBalanced.class
-com\springcloud\OrderMain8001.class
-com\springcloud\lb\impl\MyLB.class
-com\myrule\MySelfRule.class
-com\springcloud\controller\OrderController.class
