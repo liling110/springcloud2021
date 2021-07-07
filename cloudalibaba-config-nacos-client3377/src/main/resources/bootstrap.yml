@@ -1,0 +1,17 @@
+server:
+  port: 3377
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        group: DEV_GROUP
+        namespace: 036dc75e-7274-4ff3-9270-200a26c15332 #nacos平台 -> 命名空间
+
+# 公式：${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+# 在nacos平台 -> 配置管理 -> 配置列表 -> 点击加号 -> Data ID:nacos-config-client-dev.yaml
