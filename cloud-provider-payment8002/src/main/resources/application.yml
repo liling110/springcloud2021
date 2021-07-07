@@ -10,6 +10,11 @@ spring:
     url: jdbc:mysql://172.17.2.112:3306/db2021?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: root123
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1 #采样率 1为全部采集
 
 eureka:
   client:
