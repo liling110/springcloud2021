@@ -15,27 +15,30 @@ public class FlowLimitController {
 
     @GetMapping("/testA")
     public String testA(){
-        try {
-            TimeUnit.MILLISECONDS.sleep(800);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            TimeUnit.MILLISECONDS.sleep(800);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         return "---------testA";
     }
 
     @GetMapping("/testB")
     public String testB(){
+        log.info(Thread.currentThread().getName() + "\t" + "....testB" );
         return "----------testB";
     }
 
     @GetMapping("/testD")
     public String testD(){
-        try {
-            TimeUnit.SECONDS.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            TimeUnit.SECONDS.sleep(1);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 //        log.info("testD 测试RT");
+
+
         log.info("testD 异常比例");
         int age = 10/0;
         return "------testD";
@@ -49,6 +52,7 @@ public class FlowLimitController {
     }
 
     @GetMapping("/testHotKey")
+//  使用sentinel时，一定要使用blockHandler  这样的话 可以友好提示
     @SentinelResource(value = "testHotKey",blockHandler = "deal_testHotKey")
     public String testHotKey(@RequestParam(value = "p1",required = false) String p1,
                              @RequestParam(value = "p2", required = false) String p2) {
