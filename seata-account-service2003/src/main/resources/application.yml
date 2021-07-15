@@ -19,7 +19,7 @@ spring:
     password: root
 feign:
   hystrix:
-    enabled: true
+    enabled: false
 logging:
   level:
     io:

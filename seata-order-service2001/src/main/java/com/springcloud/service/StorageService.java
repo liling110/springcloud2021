@@ -8,7 +8,7 @@ import com.springcloud.domain.CommonResult;
 @FeignClient(value = "seata-storage-service")
 public interface StorageService {
 
-    @PostMapping("storage/decrease")
+    @PostMapping("/storage/decrease")
     CommonResult decrease(@RequestParam("productId") Long productId,
                           @RequestParam("count") Integer count);
 

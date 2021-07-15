@@ -23,7 +23,7 @@ public class OrderServiceImpl implements OrderService {
     private StorageService storageService;
 
     @Override
-    @GlobalTransactional(name = "fsp-create-order",rollbackFor = Exception.class)
+    @GlobalTransactional(name = "fsp-create-order",rollbackFor = Exception.class)//全局业务事务控制 无论哪里发生异常  都进行回滚
     public void create(Order order) {
         log.info("--------->开始新建订单");
         //1 新建订单
